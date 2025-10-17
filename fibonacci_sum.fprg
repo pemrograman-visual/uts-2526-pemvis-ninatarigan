@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="fibonacci_sum"/>
+        <attribute name="authors" value="hp"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-17 04:28:49 PM"/>
+        <attribute name="created" value="aHA7TkFOSU5BOzIwMjUtMTAtMTc7MDI6MTM6NDQgUE07MTkyOQ=="/>
+        <attribute name="edited" value="aHA7TkFOSU5BOzIwMjUtMTAtMTc7MDQ6Mjg6NDkgUE07MjsyMDUx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, hasil, a, b, total, i" type="Integer" array="False" size=""/>
+            <assign variable="a" expression="1"/>
+            <assign variable="b" expression="1"/>
+            <assign variable="total" expression="0"/>
+            <output expression="&quot;Masukkan bilangan fibonacci&quot;" newline="True"/>
+            <input variable="n"/>
+            <if expression="n &gt; 0">
+                <then>
+                    <if expression="n = 1">
+                        <then>
+                            <assign variable="total" expression="1"/>
+                        </then>
+                        <else>
+                            <if expression="n = 2">
+                                <then>
+                                    <assign variable="total" expression="2"/>
+                                </then>
+                                <else>
+                                    <assign variable="total" expression="2"/>
+                                    <for variable="i" start="3" end="n" direction="inc" step="1">
+                                        <assign variable="hasil" expression="a + b"/>
+                                        <assign variable="total" expression="total + hasil"/>
+                                        <assign variable="a" expression="b"/>
+                                        <assign variable="b" expression="hasil"/>
+                                    </for>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <output expression="total" newline="True"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

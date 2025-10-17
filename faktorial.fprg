@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="faktorial"/>
+        <attribute name="authors" value="hp"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-17 03:24:18 PM"/>
+        <attribute name="created" value="aHA7TkFOSU5BOzIwMjUtMTAtMTc7MDE6NTE6MTEgUE07MTkyNA=="/>
+        <attribute name="edited" value="aHA7TkFOSU5BOzIwMjUtMTAtMTc7MDM6MjQ6MTggUE07MjsyMDQy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, hasil, faktorial, i" type="Integer" array="False" size=""/>
+            <assign variable="hasil" expression="0"/>
+            <output expression="&quot;Masukkan nilai 0 - 15&quot;" newline="True"/>
+            <input variable="n"/>
+            <if expression="n &gt;= 0 &amp;&amp; n &lt;= 15">
+                <then>
+                    <assign variable="hasil" expression="faktorial(n)"/>
+                    <output expression="hasil" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Masukkan nilai 0 - 15&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="faktorial" type="Integer" variable="hasil">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="hasil" type="Integer" array="False" size=""/>
+            <if expression="n = 0">
+                <then>
+                    <assign variable="hasil" expression="1"/>
+                </then>
+                <else>
+                    <assign variable="hasil" expression="n * faktorial(n-1)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

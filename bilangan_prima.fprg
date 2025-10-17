@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="bilangan_prima"/>
+        <attribute name="authors" value="hp"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-17 04:28:20 PM"/>
+        <attribute name="created" value="aHA7TkFOSU5BOzIwMjUtMTAtMTc7MDM6MDE6MjQgUE07MTkyNQ=="/>
+        <attribute name="edited" value="aHA7TkFOSU5BOzIwMjUtMTAtMTc7MDQ6Mjg6MjAgUE07MjsyMDQw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, i" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <if expression="n &gt;= 2">
+                <then>
+                    <output expression="&quot;Bilangan prima dari 2 hingga&quot; &amp; n" newline="True"/>
+                    <for variable="i" start="2" end="n" direction="inc" step="1">
+                        <if expression="isPrima(i)">
+                            <then>
+                                <output expression="i &amp; &quot; &quot;" newline="True"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </for>
+                    <output expression="&quot; &quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Bilangan yang dimasukkan harus &gt;=2 &quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="isPrima" type="Boolean" variable="hasil">
+        <parameters>
+            <parameter name="x" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="hasil" type="Boolean" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <if expression="x &lt; 2">
+                <then>
+                    <assign variable="hasil" expression="False"/>
+                </then>
+                <else>
+                    <if expression="x = 2">
+                        <then>
+                            <assign variable="hasil" expression="True"/>
+                        </then>
+                        <else>
+                            <if expression="x MOD 2 = 0">
+                                <then>
+                                    <assign variable="hasil" expression="False"/>
+                                </then>
+                                <else>
+                                    <assign variable="hasil" expression="True"/>
+                                    <for variable="i" start="3" end="x-1 " direction="inc" step="2">
+                                        <if expression="i * i &gt; x">
+                                            <then/>
+                                            <else/>
+                                        </if>
+                                        <if expression="x MOD i = 0">
+                                            <then>
+                                                <assign variable="hasil" expression="False"/>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                    </for>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

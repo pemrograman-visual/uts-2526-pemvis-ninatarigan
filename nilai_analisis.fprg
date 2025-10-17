@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="nilai_analisis"/>
+        <attribute name="authors" value="hp"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-17 04:07:16 PM"/>
+        <attribute name="created" value="aHA7TkFOSU5BOzIwMjUtMTAtMTc7MDI6Mjg6NTMgUE07MTkzNQ=="/>
+        <attribute name="edited" value="aHA7TkFOSU5BOzIwMjUtMTAtMTc7MDQ6MDc6MTYgUE07MjsyMDQy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, i" type="Integer" array="False" size=""/>
+            <declare name="ratarata, tertinggi, terendah, hasil, total" type="Real" array="False" size=""/>
+            <declare name="nilai" type="Real" array="True" size="59"/>
+            <assign variable="total" expression="0"/>
+            <output expression="&quot;Masukkan jumlah mahasiswa: &quot;" newline="True"/>
+            <input variable="n"/>
+            <if expression="n &gt; 0">
+                <then>
+                    <output expression="&quot;Masukkan nilai: &quot;" newline="True"/>
+                    <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                        <input variable="nilai[i]"/>
+                        <assign variable="total" expression="total + nilai[i]"/>
+                    </for>
+                    <assign variable="tertinggi" expression="nilai[0]"/>
+                    <assign variable="terendah" expression="nilai[0]"/>
+                    <for variable="i" start="1" end="n-1" direction="inc" step="1">
+                        <if expression="nilai[i] &gt; tertinggi">
+                            <then>
+                                <assign variable="tertinggi" expression="nilai[i]"/>
+                            </then>
+                            <else/>
+                        </if>
+                        <if expression="nilai[i] &lt; terendah">
+                            <then>
+                                <assign variable="terendah" expression="nilai[i]"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </for>
+                    <assign variable="ratarata" expression="total / n"/>
+                    <output expression="&quot;Rata-rata = &quot; &amp; ratarata" newline="True"/>
+                    <output expression="&quot;Tertinggi = &quot; &amp; tertinggi" newline="True"/>
+                    <output expression="&quot;Terendah = &quot; &amp; terendah" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Masukkan nilai &gt; 0&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
